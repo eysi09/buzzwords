@@ -13,3 +13,6 @@ Code is sure to change more often than this README so it's best to consult the s
 Commands are added to the main.rb file as needed.
 
 To run: $ruby main.rb from command line when in directory.
+
+Note: write_freq_to_csv method expects a directory named 'data' to be present. Git currently ignores that folder 
+so data is stored locally.

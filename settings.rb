@@ -10,7 +10,7 @@ require_relative 'db_settings.rb'
 
 GA_LINK_IDENITFIER          = 'efn-tmra.html?thing='
 MP_LINKS_IDENTIFIER         = 'dba-bin/raedur.pl?radsv=0&lthing'
-SPEECH_LINK_IDENTIFIER      = '/altext/raeda/144'
+SPEECH_LINK_IDENTIFIER      = '/altext/raeda/'
 SPEECH_LINK_IDENTIFIER_OLD  = '/altext/gomulraeda.php4'
 SPEECH_DIV_IDENTIFIER       = 'div#raeda_efni'
 SPEECH_DIV_IDENTIFIER_OLD   = ''

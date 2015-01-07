@@ -6,7 +6,7 @@ class MembersOfParliament
 
   include Enumerable
   extend Forwardable
-  def_delegators :@mps, :each, :<<, :[], :last, :find
+  def_delegators :@mps, :each, :<<, :[], :last, :find, :count
 
   # 'links' is an array of Mechanize::Page::Link objects.
   # Each object represents a member of parliaments' page

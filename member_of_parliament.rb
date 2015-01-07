@@ -18,6 +18,10 @@ class MemberOfParliament
     @details
   end
 
+  def get_party
+    @details.split(',')[1].split(' ')[0]
+  end
+
   # Speeches that haven't been transcribed are left out
   def get_word_freq
     speech_links = get_links_to_speeches
@@ -47,15 +51,11 @@ class MemberOfParliament
     end
   end
 
-  private
-
   def get_links_to_speeches
-    speech_links = []
-    @page.links.each do |link|
-      speech_links << link if link.uri.to_s.include? SPEECH_LINK_IDENTIFIER
-    end
-    speech_links
+    @page.links.select{|l| l.uri.to_s.include? SPEECH_LINK_IDENTIFIER}
   end
+
+  private
 
   # Remove non-word characters and spaces
   def clean_str(word)

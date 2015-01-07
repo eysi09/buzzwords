@@ -15,7 +15,8 @@ conn.exec("CREATE TABLE speeches (
   member_of_parliament_id int NOT NULL,
   general_assembly_id     int NOT NULL,
   party                   varchar(255),
-  content                 text);")
+  content                 text,
+  url                     varchar(255));")
 
 # Create members_of_parliament table
 conn.exec("CREATE TABLE members_of_parliament (

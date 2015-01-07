@@ -4,9 +4,9 @@ class DataBuilder
 
   def initialize
     @conn = PG.connect(
-      dbname:   'buzzwords_development',
-      user:     'postgres',
-      password: 'number9')
+      dbname:     'buzzwords_development',
+      user:       POSTGRES_USER,
+      password:   POSTGRES_PASSWORD)
   end
 
   def create_table(table_name)

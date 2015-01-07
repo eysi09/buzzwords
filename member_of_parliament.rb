@@ -59,7 +59,7 @@ class MemberOfParliament
 
   # Remove non-word characters and spaces
   def clean_str(word)
-    word.gsub(/[^\w]/, '').downcase 
+    word.gsub(/[^\w]/, '').downcase
   end
 
 end

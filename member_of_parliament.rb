@@ -8,6 +8,11 @@ class MemberOfParliament
     @name     = name
     @details  = details
     @page     = Mechanize.new.get(uri)
+    @id       = nil
+  end
+
+  def set_id(id)
+    @id = id
   end
 
   def get_name
@@ -20,6 +25,10 @@ class MemberOfParliament
 
   def get_party
     @details.split(',')[1].split(' ')[0]
+  end
+
+  def get_id
+    @id
   end
 
   # Speeches that haven't been transcribed are left out

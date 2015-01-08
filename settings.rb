@@ -7,7 +7,7 @@ require_relative 'members_of_parliament.rb'
 require_relative 'member_of_parliament.rb'
 require_relative 'data_builder.rb'
 require_relative 'db_settings.rb'
-require_relative 'db_utils.rb'
+require_relative 'database.rb'
 
 GA_LINK_IDENITFIER          = 'efn-tmra.html?thing='
 MP_LINKS_IDENTIFIER         = 'dba-bin/raedur.pl?radsv=0&lthing'

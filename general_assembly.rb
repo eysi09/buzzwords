@@ -5,8 +5,9 @@ class GeneralAssembly
 	def initialize(page, link)
 		@link 			= link
 		@ordinal 		= link.text.gsub('.', '').to_i
-		href 				= link.href
-		@details 		= page.at('li:contains(href)').text # Needs fixin'
+		ga_year 		= link.text
+		a_el 				= page.at(%Q(a:contains('#{ga_year}')))
+		@details 		= a_el.parent.text
 	end
 
 	def get_ordinal

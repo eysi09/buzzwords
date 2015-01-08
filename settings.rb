@@ -5,7 +5,6 @@ require 'pg'
 require_relative 'general_assembly.rb'
 require_relative 'members_of_parliament.rb'
 require_relative 'member_of_parliament.rb'
-require_relative 'data_builder.rb'
 require_relative 'db_settings.rb'
 require_relative 'database.rb'
 

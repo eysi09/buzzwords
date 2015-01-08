@@ -29,8 +29,8 @@ conn.exec("CREATE TABLE general_assemblies (
   year_from varchar(4) NOT NULL,
   year_to   varchar(4));")
 
-# Create member_of_parliament_x_general_assembly table
-conn.exec("CREATE TABLE member_of_parliament_x_general_assembly (
+# Create members_of_parliament_x_general_assemblies table
+conn.exec("CREATE TABLE members_of_parliament_x_general_assemblies (
   member_of_parliament_id int NOT NULL,
   general_assembly_id     int NOT NULL,
   party                   varchar(255),

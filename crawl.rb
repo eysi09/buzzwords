@@ -19,24 +19,24 @@ db    = Database.new()
 general_assembly_links  = page.links.select{|l| l.uri.to_s.include? GA_LINK_IDENITFIER}
 general_assemblies      = general_assembly_links.map{|l| GeneralAssembly.new(page, l)}
 
-general_assemblies[1..1].each do |ga|
+general_assemblies[0..3].each do |ga|
   db.insert_into_general_assemblies(ga.get_ordinal, ga.get_year_from, ga.get_year_to)
   mps_links     = ga.get_links_to_mp_pages
   mps           = MembersOfParliament.new(mps_links, ga.get_mps_list_page)
 
   mps.each do |mp|
-    mp.set_id = db.insert_into_members_of_parliament(mp.get_name)
-    db.insert_into_member_of_parliament_x_general_assembly(mp.get_id, ga.get_ordinal, mp.get_party, mp.get_details)
+    id = db.insert_into_members_of_parliament(mp.get_name)
+    mp.set_id(id)
+    db.insert_into_members_of_parliament_x_general_assemblies(mp.get_id, ga.get_ordinal, mp.get_party, mp.get_details)
     speech_links = mp.get_links_to_speeches
 
     speech_links.each do |link|
       speech_page = link.click
       if (speech_obj = speech_page.at SPEECH_DIV_IDENTIFIER)
-        speech_date = link.text
-        speech_content = speech_obj.text
-        speech_link = speech_page.uri
-        binding.pry
-        db.insert_into_speeches(mp.get_id, ga.get_ordinal, mp.get_party, speech_date, speech_content, speech_link)
+        speech_date     = link.text
+        speech_content  = speech_obj.text.strip
+        speech_url      = speech_page.uri.to_s
+        db.insert_into_speeches(mp.get_id, ga.get_ordinal, mp.get_party, speech_date, speech_content, speech_url)
       end
     end
   end

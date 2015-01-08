@@ -24,7 +24,12 @@ class MemberOfParliament
   end
 
   def get_party
-    @details.split(',')[1].split(' ')[0]
+    party = @details.split(',')[1]
+    if party.nil?
+      ''
+    else
+      party.split(' ')[0]
+    end
   end
 
   def get_id

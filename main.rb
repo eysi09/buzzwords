@@ -19,5 +19,21 @@ uri = 'http://www.althingi.is/vefur/efn-tmra.html?thing=144'
 # puts ossur.get_details
 # puts ossur.get_word_freq
 
-#db = DataBuilder.new()
+db = Database.new()
+db.empty_table('general_assemblies')
+db.empty_table('members_of_parliament')
+db.empty_table('members_of_parliament_x_general_assemblies')
+db.empty_table('speeches')
+#db.drop_table('general_assemblies')
+#db.drop_table('members_of_parliament')
+#db.drop_table('members_of_parliament_x_general_assemblies')
+#db.drop_table('speeches')
+#mp_id = 1
+#ga_id = 1
+#party = 'bla'
+#date = '01.01.2001 10:00:00'
+#content = "you ain't seen"
+#url = 'blae'
+
 #db.insert('members_of_parliament', 'name', "'Össur'")
+

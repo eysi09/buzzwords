@@ -18,7 +18,7 @@ class MembersOfParliament
     @mps = []
     links.each do |link|
       mp_name     = link.text
-      mp_details  = page.at('li:contains(mp_name)').children[1].text
+      mp_details  = page.at("//*[text()='#{mp_name}']/..").children[1].text
       mp_uri      = page.uri.merge link.uri # Get absolute URI
       mp          = MemberOfParliament.new(mp_name, mp_details, mp_uri)
       @mps << mp

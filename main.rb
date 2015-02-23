@@ -20,10 +20,10 @@ uri = 'http://www.althingi.is/vefur/efn-tmra.html?thing=144'
 # puts ossur.get_word_freq
 
 db = Database.new()
-db.empty_table('general_assemblies')
-db.empty_table('members_of_parliament')
-db.empty_table('members_of_parliament_x_general_assemblies')
-db.empty_table('speeches')
+#db.empty_table('general_assemblies')
+#db.empty_table('members_of_parliament')
+#db.empty_table('members_of_parliament_x_general_assemblies')
+#db.empty_table('speeches')
 #db.drop_table('general_assemblies')
 #db.drop_table('members_of_parliament')
 #db.drop_table('members_of_parliament_x_general_assemblies')
